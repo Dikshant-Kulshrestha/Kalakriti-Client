@@ -17,6 +17,13 @@ const Homepage = () => {
         </div>
       </div>
 
+      <div className="glass">
+          <div className="glass-text">
+            <span className="glass-1">Give the Gift of</span>
+            <span className="glass-2">Handmade</span>
+          </div>
+        </div>
+
       <div className="page">
         <div className="page-title">
           <div className="sub-title">Directly from Artists</div>
@@ -26,13 +33,6 @@ const Homepage = () => {
             <span className="title-icon">
               <RiTornadoLine />
             </span>
-          </div>
-        </div>
-
-        <div className="glass">
-          <div className="glass-text">
-            <span className="glass-1">Give the Gift of</span>
-            <span className="glass-2">Handmade</span>
           </div>
         </div>
 

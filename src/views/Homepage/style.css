@@ -71,9 +71,9 @@
   width: 40rem;
 
   overflow: hidden;
-  position: relative;
-  right: 35%;
-  bottom: 3%;
+  position: absolute;
+  top: 35%;
+  left: 35%;
 }
 
 .glass:before {
@@ -201,6 +201,7 @@
 
 .product-image img {
   height: 20rem;
+  max-width: 15rem;
   object-fit: cover;
   border-radius: 99px;
 }

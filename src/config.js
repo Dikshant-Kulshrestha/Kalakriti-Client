@@ -1,4 +1,4 @@
-export const baseUrl = "http://localhost:3001";
+export const baseUrl = "https://kalakriti-server.herokuapp.com";
 
 export const retrieveToken = () => {
   const storedUser = window.localStorage.getItem("user");

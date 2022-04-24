@@ -18,7 +18,7 @@ const FeaturedProduct = () => {
   }, []);
 
   useEffect(() => {
-    if (!product.endTs) return;
+    if (!product || !product.endTs) return;
 
     const intervalId = setInterval(() => {
       setTimeLeft(getTime(product.endTs));
@@ -27,7 +27,7 @@ const FeaturedProduct = () => {
     return () => {
       clearInterval(intervalId);
     };
-  }, [product.endTs]);
+  }, [product]);
 
   const getTime = (datestring) => {
     const timestamp = (Date.parse(datestring) - Date.now()) / 1000;
@@ -51,7 +51,7 @@ const FeaturedProduct = () => {
     return product.bids[product.bids.length - 1].amount;
   };
 
-  if (!product.title) return null;
+  if (!product || !product.title) return null;
   return (
     <div className="featured">
       <div className="product-content">

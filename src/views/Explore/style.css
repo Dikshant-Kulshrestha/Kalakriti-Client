@@ -1,5 +1,6 @@
 .ExploreMain {
   padding: 1rem 8rem;
+  min-height: 100vh;
 
   background-color: #F9EAE1;
 }
