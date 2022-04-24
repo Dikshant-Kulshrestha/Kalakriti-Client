@@ -1,0 +1,17 @@
+.ExploreMain {
+  padding: 1rem 8rem;
+
+  background-color: #F9EAE1;
+}
+
+.ExploreHeader {
+  margin: 1rem 0;
+  color: #41362f;
+  font-size: 3rem;
+}
+
+.ExploreItems {
+  padding: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+}

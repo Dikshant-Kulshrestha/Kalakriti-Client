@@ -1,0 +1,206 @@
+.HomeHeader {
+  height: 110vh;
+
+  display: flex;
+}
+
+.left {
+  height: 100%;
+  width: 50%;
+  background-image: url("../../assets/images/jpgs/craft.jpg");
+  background-position: 50% 100%;
+  background-size: cover;
+}
+
+.tag {
+  padding: 2rem;
+  height: 5rem;
+  width: 14rem;
+
+  background-color: #ffffff;
+  position: absolute;
+
+  top: 10%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page {
+  flex: 1;
+
+  padding: 4rem 5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sub-title {
+  color: #9a9a9a;
+  letter-spacing: 0.2rem;
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 2rem;
+
+  text-transform: uppercase;
+}
+
+.title {
+  color: #464452;
+
+  font-family: 'Lora';
+  font-weight: 500;
+  font-size: 5rem;
+
+  letter-spacing: 0.1rem;
+}
+
+.title-icon {
+  position: relative;
+  left: -1rem;
+
+  vertical-align: super;
+  color: #FFB319;
+  font-size: 3.5rem;
+}
+
+.glass {
+  height: 14rem;
+  width: 40rem;
+
+  overflow: hidden;
+  position: relative;
+  right: 35%;
+  bottom: 3%;
+}
+
+.glass:before {
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
+  content: '';
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.glass-text {
+  height: 100%;
+  width: 100%;
+  padding: 0 1.5rem;
+
+  position: relative;
+  text-align: justify;
+  text-justify: inter-word;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
+.glass-1 {
+  width: 100%;
+  display: inline-block;
+
+  font-size: 2.5rem;
+  font-family: 'Poppins';
+  text-transform: uppercase;
+}
+
+.glass-2 {
+  width: 100%;
+  display: inline-block;
+
+  font-size: 4.5rem;
+  font-family: 'Lora';
+  letter-spacing: 0.5rem;
+}
+
+.page-links {
+  position: absolute;
+  top: 45%;
+  right: 0;
+
+  font-weight: 100;
+  font-size: 1.5rem;
+  transform: rotate(-90deg);
+
+  display: flex;
+}
+
+.featured {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.product-title {
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+.product-subtext {
+  margin: 0.7rem 0;
+  width: 85%;
+}
+
+.product-cta {
+  margin: 1.2rem 0 1rem;
+  height: 3rem;
+  width: 10rem;
+
+  border: 1px solid #474553;
+  border-radius: 99px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-family: 'Quicksand';
+  font-weight: 500;
+
+  padding: 0.2rem 1rem;
+  font-size: 1.7rem;
+}
+
+.bid {
+  height: 3rem;
+  width: 3rem;
+
+  border-radius: 99px;
+  border: 1px solid #474553;
+
+  background-color: #474553;
+  font-size: 1.5rem;
+  color: #ffffff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.product-duration {
+  color: #444444;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.product-image {
+  height: 20rem;
+  width: 15rem;
+
+  border-radius: 99px;
+}
+
+.product-image img {
+  height: 20rem;
+  object-fit: cover;
+  border-radius: 99px;
+}

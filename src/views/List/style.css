@@ -1,0 +1,53 @@
+.ListMain {
+  padding: 2rem 0;
+  min-width: 80%;
+
+  background-color: #f7fafb;
+  display: flex;
+  justify-content: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ListHeader {
+  padding: 1rem 1.2rem;
+  width: 55%;
+
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.ListSection {
+  width: 55%;
+}
+
+.ListForm {
+  padding: 2rem 2.2rem;
+  background-color: #ffffff;
+  border-radius: 7px;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.ListRow {
+  display: flex;
+}
+
+.ListRow>div:first-of-type {
+  margin-right: 1rem;
+}
+
+.ListRow>div:last-of-type {
+  margin-left: 1rem;
+}
+
+.ListActions {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
