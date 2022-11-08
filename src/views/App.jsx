@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Navigate, Outlet, Route, Routes, useLocation } from "react-router-dom";
 
-import { Login, Register, Homepage, Explore, List, Product } from "./index";
+import { Login, Register, Homepage, Explore, List, Product, History } from "./index";
 
 import "../assets/styles/App.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -23,13 +23,14 @@ const App = () => {
       <Route path="login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
 
       <Route element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
-        <Route index element={<Homepage />} />
+        <Route index element={<Homepage setIsAuthenticated={setIsAuthenticated} />} />
 
-        <Route path="list" element={<List />} />
-        <Route path="explore" element={<Explore />} />
+        <Route path="list" element={<List setIsAuthenticated={setIsAuthenticated} />} />
+        <Route path="explore" element={<Explore setIsAuthenticated={setIsAuthenticated} />} />
         <Route path="product">
-          <Route path=":pId" element={<Product />} />
+          <Route path=":pId" element={<Product setIsAuthenticated={setIsAuthenticated} />} />
         </Route>
+        <Route path="history" element={<History setIsAuthenticated={setIsAuthenticated} />} />
       </Route>
     </Routes>
   );

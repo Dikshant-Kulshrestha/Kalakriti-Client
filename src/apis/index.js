@@ -107,3 +107,14 @@ export const addBid = async (data) => {
 
   return await response.json();
 };
+
+export const getUserBids = async (data) => {
+  const url = baseUrl + "/api/bidding?" + new URLSearchParams({ owner: data.owner });
+
+  const response = await fetch(url, {
+    method: "GET",
+    headers: { Authorization: retrieveToken() },
+  });
+
+  return await response.json();
+};

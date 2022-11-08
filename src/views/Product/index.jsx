@@ -14,7 +14,7 @@ import Rating from "../../components/Rating";
 
 const iconMargin = { marginRight: "8px" };
 
-const Product = () => {
+const Product = ({ setIsAuthenticated }) => {
   const params = useParams();
 
   const [productData, setProductData] = useState();
@@ -185,7 +185,7 @@ const Product = () => {
   if (!productData) return null;
   return (
     <>
-      <Navbar width="full" />
+      <Navbar width="full" setIsAuthenticated={setIsAuthenticated} />
 
       <main className="ProductMain">
         <section className="ProductDisplay">

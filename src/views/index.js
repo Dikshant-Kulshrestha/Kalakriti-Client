@@ -5,3 +5,4 @@ export { default as Explore } from "./Explore";
 export { default as Homepage } from "./Homepage";
 export { default as List } from "./List";
 export { default as Product } from "./Product";
+export { default as History } from "./History";

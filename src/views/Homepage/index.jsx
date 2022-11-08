@@ -6,10 +6,10 @@ import FeaturedProduct from "../../components/FeaturedProduct";
 import { Kalakriti } from "../../assets/images/svgs";
 import "./style.css";
 
-const Homepage = () => {
+const Homepage = ({ setIsAuthenticated }) => {
   return (
     <header className="HomeHeader">
-      <Navbar />
+      <Navbar setIsAuthenticated={setIsAuthenticated} />
 
       <div className="left">
         <div className="tag">

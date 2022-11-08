@@ -17,7 +17,7 @@ const initialFormData = {
   endDate: "",
 };
 
-const List = () => {
+const List = ({ setIsAuthenticated }) => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState(initialFormData);
@@ -59,7 +59,7 @@ const List = () => {
 
   return (
     <>
-      <Navbar width="full" />
+      <Navbar width="full" setIsAuthenticated={setIsAuthenticated} />
 
       <main className="ListMain">
         <header className="ListHeader">Add Product</header>

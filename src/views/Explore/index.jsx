@@ -6,7 +6,7 @@ import ExploreProduct from "../../components/ExploreProduct";
 import { getExploreProducts } from "../../apis";
 import "./style.css";
 
-const Explore = () => {
+const Explore = ({ setIsAuthenticated }) => {
   const [exploreData, setExploreData] = useState([]);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const Explore = () => {
 
   return (
     <>
-      <Navbar width="full" />
+      <Navbar width="full" setIsAuthenticated={setIsAuthenticated} />
 
       <main className="ExploreMain">
         <h1 className="ExploreHeader">Explore</h1>

@@ -63,6 +63,84 @@ nav {
   cursor: pointer;
 }
 
+.profileContainer {
+  position: relative;
+}
+
+.profile {
+  margin-left: 1rem;
+  padding: 4px 5px;
+
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  background-color: #EEEEEE;
+  border-radius: 6px;
+
+  transition: 100ms background-color linear;
+}
+
+.profile:hover {
+  background-color: #DDDDDD;
+}
+
+.dropdown {
+  position: absolute;
+  right: -20%;
+  top: 120%;
+
+  background: white;
+  color: #E3DFE9;
+  font-size: 18px;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  border-radius: 15px;
+  transform: scale(0.01);
+  opacity: 0;
+
+  display: block;
+  cursor: pointer;
+
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease 0.15s;
+  transform-origin: right top;
+  overflow: hidden;
+
+  z-index: 10;
+}
+
+.dropdown.open {
+  transform: scale(1);
+  opacity: 1;
+  box-shadow: 3px 3px 2rem rgba(118, 96, 168, 0.15);
+}
+
+.dropdown div {
+  padding: 0.5rem 1.2rem;
+
+  color: #444444;
+  text-decoration: none;
+  white-space: nowrap;
+
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.2s ease, background-color 0.2s ease, padding-left 0.2s ease;
+}
+
+.dropdown div:hover {
+  background-color: #EEE;
+}
+
+.dropdown div svg {
+  margin-right: 0.5rem;
+}
+
 .menu {
   cursor: pointer;
 

@@ -27,6 +27,7 @@ const Login = ({ isAuthenticated, setIsAuthenticated }) => {
       navigate("/");
     }
   };
+
   return (
     <main className="AuthMain">
       <div className="AuthSection">
