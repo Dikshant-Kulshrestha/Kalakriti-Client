@@ -21,10 +21,14 @@ const ExploreProduct = ({ product }) => {
     return product.bids[product.bids.length - 1].amount;
   };
 
+  const handlePriceClick = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <Link to={`/product/${product._id}`} className="ExploreProductLink">
       <article className="ExploreProduct" key={product._id}>
-        <div className="ExploreProductPrice">₹ {getPrice(product)}</div>
+        <div className="ExploreProductPrice" onClick={handlePriceClick}>₹ {getPrice(product)}</div>
 
         <div
           className={`ExploreProductImage ${Date.parse(product.endTs) <= Date.now() && "ExploreProductSold"}`}

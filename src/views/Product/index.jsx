@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { addBid, viewProduct } from "../../apis";
 import { RiTimeLine, RiLineChartLine, RiAuctionLine, RiStarFill } from "react-icons/ri";
 import "./style.css";
@@ -204,9 +204,9 @@ const Product = ({ setIsAuthenticated }) => {
               <div className="ProductTitle">{productData.title}</div>
               <div className="ProductOwner">
                 <span>By </span>
-                <span className="ProductOwnerColor">
+                <Link className="ProductOwnerColor" to={"/u/" + productData.owner._id}>
                   {productData.owner.firstName} {productData.owner.lastName}
-                </span>
+                </Link>
                 <span className="ProductOwnerRating">
                   ({getAverageRating(productData)} <RiStarFill />)
                 </span>

@@ -51,6 +51,17 @@ export const getExploreProducts = async () => {
   return await response.json();
 };
 
+export const getProductsByUser = async (data) => {
+  const url = baseUrl + `/api/listings/seller?user=${data.user}`;
+
+  const response = await fetch(url, {
+    method: "GET",
+    headers: { Authorization: retrieveToken() },
+  });
+
+  return await response.json();
+}
+
 /* Product APIs */
 
 export const addProduct = async (data, files) => {
@@ -118,3 +129,16 @@ export const getUserBids = async (data) => {
 
   return await response.json();
 };
+
+/* Seller APIs */
+
+export const getSellerDetails = async (data) => {
+  const url = baseUrl + `/api/seller?user=${data.user}`;
+
+  const response = await fetch(url, {
+    method: "GET",
+    headers: { Authorization: retrieveToken() },
+  });
+
+  return await response.json();
+}

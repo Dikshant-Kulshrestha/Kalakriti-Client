@@ -63,6 +63,10 @@ nav {
   cursor: pointer;
 }
 
+.content a:hover {
+  color: #000000;
+}
+
 .profileContainer {
   position: relative;
 }

@@ -1,0 +1,45 @@
+.SellerBanner {
+  margin: 2rem 0;
+  margin-left: -8rem;
+  padding: 0 20%;
+  background-color: #FEFEFE;
+
+  height: 10rem;
+  width: calc(100% + 16rem);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.SellerInformation {
+  display: flex;
+  flex-direction: column;
+}
+
+.SellerTitle {
+  font-weight: 700;
+  font-size: 2.3rem;
+}
+
+.SellerAge {
+  display: flex;
+  align-items: center;
+}
+
+.SellerOverview {
+  display: flex;
+  flex-direction: column;
+}
+
+.SellerRating {
+  display: flex;
+  align-items: center;
+  color: #FFB72B;
+  align-self: flex-end;
+}
+
+.SellerRating>span {
+  display: inline-flex;
+  align-items: center;
+}
