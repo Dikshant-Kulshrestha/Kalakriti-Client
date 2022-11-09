@@ -1,0 +1,48 @@
+.search-container {
+	position: relative;
+	display: inline-block;
+
+	height: 2rem;
+	width: 2rem;
+	vertical-align: bottom;
+}
+
+
+.search {
+  position: absolute;
+	left: calc(2rem - 1px);
+  
+  height: 100%;
+	width: 0;
+
+	background: white;
+	outline: none;
+	border: 2px solid #EEEEEE;
+
+  font: inherit;
+
+	z-index: 10;
+	transition-duration: 0.4s;
+}
+
+.search.active {
+  width: 25vw;
+  padding: 0 0.6rem;
+}
+
+.search-button {
+  height: 2rem;
+  width: 100%;
+
+  padding: 0.2rem;
+  background-color: #EEEEEE;
+  font-size: 1.2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  position: absolute;
+}

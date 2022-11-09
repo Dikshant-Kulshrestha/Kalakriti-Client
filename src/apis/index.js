@@ -62,6 +62,17 @@ export const getProductsByUser = async (data) => {
   return await response.json();
 }
 
+export const getSearchResults = async (data) => {
+  const url = baseUrl + `/api/listings/search?query=${data.query}`;
+
+  const response = await fetch(url, {
+    method: "GET",
+    headers: { Authorization: retrieveToken() },
+  });
+
+  return await response.json();
+}
+
 /* Product APIs */
 
 export const addProduct = async (data, files) => {

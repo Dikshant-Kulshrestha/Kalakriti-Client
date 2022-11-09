@@ -1,0 +1,35 @@
+.ResultBanner {
+  margin: 2rem 0;
+  margin-left: -8rem;
+  padding: 0 20%;
+  background-color: #FEFEFE;
+
+  height: 10rem;
+  width: calc(100% + 16rem);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ResultInformation {
+  display: flex;
+  flex-direction: column;
+}
+
+.ResultTitle {
+  font-weight: 100;
+  font-size: 2.6rem;
+}
+
+.ResultAge {
+  margin-bottom: -0.8rem;
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.ResultOverview {
+  display: flex;
+  flex-direction: column;
+}

@@ -4,11 +4,13 @@ import { useParams } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import ExploreProduct from "../../components/ExploreProduct";
 
+import { getRelativeTime } from "../../utils";
 import { getSellerDetails } from "../../apis";
+
+import { RiAwardLine, RiStarFill, RiStarLine, RiVipDiamondLine } from "react-icons/ri";
 import "../Explore/style.css";
 import "./style.css";
-import { getRelativeTime } from "../../utils";
-import { RiAwardLine, RiStarFill, RiStarLine, RiVipDiamondLine } from "react-icons/ri";
+
 
 const Explore = ({ setIsAuthenticated }) => {
   const params = useParams();

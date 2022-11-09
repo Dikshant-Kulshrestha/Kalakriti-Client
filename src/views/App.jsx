@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Navigate, Outlet, Route, Routes, useLocation } from "react-router-dom";
 
-import { Login, Register, Homepage, Explore, List, Product, History, Profile } from "./index";
+import { Login, Register, Homepage, Explore, List, Product, History, Profile, Results } from "./index";
 
 import "../assets/styles/App.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -32,6 +32,7 @@ const App = () => {
         </Route>
         <Route path="history" element={<History setIsAuthenticated={setIsAuthenticated} />} />
         <Route path="u/:uId" element={<Profile setIsAuthenticated={setIsAuthenticated} />} />
+        <Route path="s/:query" element={<Results setIsAuthenticated={setIsAuthenticated} />} />
       </Route>
     </Routes>
   );

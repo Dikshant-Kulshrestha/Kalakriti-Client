@@ -1,8 +1,9 @@
 import { useEffect, useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { RiHistoryLine, RiLogoutBoxLine, RiMenu4Line, RiSearchLine, RiUser3Line } from "react-icons/ri";
+import { RiHistoryLine, RiLogoutBoxLine, RiMenu4Line, RiUser3Line } from "react-icons/ri";
 import { Kalakriti } from "../../assets/images/svgs";
 import "./style.css";
+import Search from "../Search";
 
 const navData = [
   { title: "Explore", link: "/explore" },
@@ -60,9 +61,7 @@ const Navbar = ({ setIsAuthenticated, width }) => {
           <img className="navLogo" src={Kalakriti} alt="" />
         </Link>
       ) : (
-        <div className="search">
-          <RiSearchLine />
-        </div>
+        <Search />
       )}
 
       <div className="content">
