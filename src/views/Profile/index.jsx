@@ -32,8 +32,6 @@ const Explore = ({ setIsAuthenticated }) => {
       <Navbar width="full" setIsAuthenticated={setIsAuthenticated} />
 
       <main className="ExploreMain">
-        <h1 className="ExploreHeader">Profile</h1>
-
         <section className="SellerBanner">
           <div className="SellerInformation">
             <span className="SellerTitle">
@@ -46,7 +44,9 @@ const Explore = ({ setIsAuthenticated }) => {
             </div>
           </div>
 
-          <RiVipDiamondLine style={{ position: "absolute", left: "50%", transform: "translateX(-50%)" }} size={60} />
+          <span className="SellerBannerIcon">
+            <RiVipDiamondLine size={60} />
+          </span>
 
           <div className="SellerOverview">
             <div>

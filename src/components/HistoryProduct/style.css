@@ -75,7 +75,7 @@
   border-radius: 10px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   height: 2rem;
-  margin: 0.7rem 1rem ;
+  margin: 0.7rem 1rem;
 
   display: flex;
   justify-content: center;
@@ -96,6 +96,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.HistoryProductMore {
+  font-size: 0.8rem;
 }
 
 .HistoryProductStatus {
@@ -120,4 +124,46 @@
 
 .HistoryProductStatusDone {
   color: #555555;
+}
+
+@media only screen and (max-width: 768px) {
+  .HistoryProduct {
+    margin-bottom: 20px;
+    width: 85vw;
+  }
+
+  .HistoryProductTitle {
+    height: unset;
+  }
+
+  .HistoryProductDescription {
+    margin-top: unset;
+  }
+
+  .HistoryProductBids {
+    padding: 0 5px;
+    justify-content: space-evenly;
+  }
+
+  .HistoryProductBid {
+    width: 40%;
+    height: 1.6rem;
+    margin: 0.3rem 0.1rem;
+    padding: 0 4px;
+
+    justify-content: space-between;
+  }
+
+  .HistoryProductBid>span {
+    margin-left: unset;
+    margin-right: unset;
+  }
+
+  .HistoryProductMore {
+    font-size: 0.7rem;
+  }
+
+  .HistoryProductStatus {
+    padding: 0 0.7rem;
+  }
 }

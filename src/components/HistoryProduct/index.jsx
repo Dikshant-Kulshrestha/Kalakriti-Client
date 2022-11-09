@@ -29,7 +29,7 @@ const HistoryProduct = ({ product }) => {
             {(product.bids.length > 3) && (
               <div className="HistoryProductBid" onClick={handleBidClick}>
                 <span><RiAuctionLine /></span>
-                <span style={{ fontSize: "0.8rem" }}>+ {product.bids.length - 3} more</span>
+                <span className="HistoryProductMore">+ {product.bids.length - 3} more</span>
             </div>
             )}
           </div>
