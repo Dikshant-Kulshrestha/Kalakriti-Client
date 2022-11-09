@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import { addBid, viewProduct } from "../../apis";
 import { RiTimeLine, RiLineChartLine, RiAuctionLine, RiStarFill } from "react-icons/ri";
@@ -19,6 +19,8 @@ const Product = ({ setIsAuthenticated }) => {
 
   const [productData, setProductData] = useState();
   const [bid, setBid] = useState("");
+
+  const galleryRef = useRef(null);
 
   useEffect(() => {
     const fetchRequest = async (pId) => {
@@ -182,6 +184,18 @@ const Product = ({ setIsAuthenticated }) => {
     return null;
   };
 
+  const getGallery = () => (
+    <article className="ProductGallery" ref={galleryRef}>
+      <Carousel showArrows={false} dynamicHeight={true}>
+        {productData.images.map((image, idx) => (
+          <div key={idx} className="ProductImage">
+            <img key={idx} alt="product" src={image.url} />
+          </div>
+        ))}
+      </Carousel>
+    </article>
+  );
+
   if (!productData) return null;
   return (
     <>
@@ -189,15 +203,7 @@ const Product = ({ setIsAuthenticated }) => {
 
       <main className="ProductMain">
         <section className="ProductDisplay">
-          <article className="ProductGallery">
-            <Carousel showArrows={false} dynamicHeight={true}>
-              {productData.images.map((image, idx) => (
-                <div key={idx} className="ProductImage">
-                  <img key={idx} alt="product" src={image.url} />
-                </div>
-              ))}
-            </Carousel>
-          </article>
+          {(window.innerWidth > 768) ? getGallery() : null}
 
           <article className="ProductMeta">
             <div className="">
@@ -213,20 +219,21 @@ const Product = ({ setIsAuthenticated }) => {
               </div>
             </div>
 
+            {(window.innerWidth <= 768) ? getGallery() : null}
+
             {Date.parse(productData.endTs) >= Date.now() ? renderUnsold() : renderSold()}
 
             {renderRating()}
 
-            <div className="ProductBiddingContainer">
+            <div className="ProductChartContainer">
               <div className="ProductBiddingHeader">
                 <RiLineChartLine size={"18px"} style={iconMargin} />
                 Pricing History
               </div>
-              <div className="ProductBiddingDetails">
+              <div className="ProductChartDetails">
                 <ResponsiveLine
                   data={bidData}
-                  // colors={["7648ce"]}
-                  margin={{ top: 25, right: 5, bottom: 30, left: 40 }}
+                  margin={{ top: 25, right: 40, bottom: 30, left: 80 }}
                   enableArea={true}
                   xScale={{ type: "point" }}
                   yScale={{ type: "linear", min: "auto", max: "auto", stacked: false }}
@@ -244,7 +251,7 @@ const Product = ({ setIsAuthenticated }) => {
                   pointSize={10}
                   pointBorderWidth={2}
                   pointLabelYOffset={-12}
-                  animate={false}
+                  animate={true}
                 />
               </div>
             </div>

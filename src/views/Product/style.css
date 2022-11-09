@@ -1,5 +1,5 @@
 .ProductMain {
-  padding: 4rem 8rem;
+  padding: 4rem 7vw;
 
   display: flex;
   flex-direction: column;
@@ -13,7 +13,6 @@
 .ProductGallery {
   width: 60%;
   padding: 0 1rem;
-  /* flex: 1; */
 
   display: flex;
   flex-direction: column;
@@ -34,7 +33,6 @@
 .ProductMeta {
   width: 40%;
   padding: 0 3rem;
-  /* flex: 1; */
 }
 
 .ProductTitle {
@@ -108,15 +106,6 @@
   margin: 0 4px;
 }
 
-.ProductBiddingContainer:last-of-type {
-  max-height: 400px;
-}
-
-.ProductBiddingContainer:last-of-type,
-.ProductBiddingDetails {
-  max-height: 300px;
-}
-
 .ProductBiddingDetails>div:last-of-type>div {
   margin: 0 10px;
   width: unset;
@@ -131,3 +120,42 @@
   font-weight: 500;
   color: #6735c9;
 }
+
+/* For Graph */
+.ProductChartContainer {
+  margin: 2rem 0;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.ProductChartDetails {
+  height: 300px;
+  background-color: #fbfdff;
+
+  display: flex;
+  align-items: center;
+
+  border-radius: 0 0 5px 5px;
+  border: 1px solid #e5e8eb;
+}
+
+@media only screen and (max-width: 768px) {
+  .ProductDisplay {
+    flex-direction: column;
+  }
+
+  .ProductMeta {
+    order: 1;
+    width: unset;
+    padding: unset;
+  }
+
+  .ProductGallery {
+    order: 2;
+    width: unset;
+    margin: 1rem 0;
+    padding: unset;
+  }
+} 

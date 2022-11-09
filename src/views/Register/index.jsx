@@ -45,9 +45,7 @@ const Register = () => {
   return (
     <main className="AuthMain">
       <div className="AuthSection">
-        <div className="AuthLeft">
-          <img className="AuthImg" alt="Kalakriti" src={Grid} />
-        </div>
+        <div className="AuthLeft" style={{ backgroundImage: `url(${Grid})` }}></div>
 
         <div className="AuthRight">
           <form className="AuthForm" onSubmit={handleSubmit}>

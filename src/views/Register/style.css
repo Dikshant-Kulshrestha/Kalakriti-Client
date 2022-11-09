@@ -19,7 +19,12 @@ body {
 }
 
 .AuthLeft {
-  width: 50%;
+  flex: 3.5;
+  background-size: cover;
+}
+
+.AuthRight {
+  flex: 6.5;
 }
 
 .AuthForm {
