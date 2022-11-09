@@ -1,6 +1,5 @@
 .HomeHeader {
-  height: 110vh;
-
+  height: 100vh;
   display: flex;
 }
 
@@ -204,4 +203,57 @@
   max-width: 15rem;
   object-fit: cover;
   border-radius: 99px;
+}
+
+@media only screen and (max-width: 768px) {
+  .HomeHeader {
+    flex-direction: column;
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .glass {
+    width: unset;
+    left: unset;
+  }
+
+  .page-links {
+    display: none;
+  }
+
+  .glass {
+    height: 10rem;
+  }
+
+  .glass-1 {
+    font-size: 1.7rem;
+  }
+
+  .glass-2 {
+    font-size: 3.2rem;
+    letter-spacing: 0.25rem;
+  }
+
+  .page {
+    padding: 4rem 6vw;
+  }
+
+  .sub-title {
+    font-size: 1.8rem;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .title-icon {
+    left: -0.4rem;
+    font-size: 2rem;
+  }
+
+  .featured {
+    display: none;
+  }
 }

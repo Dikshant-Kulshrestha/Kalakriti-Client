@@ -3,13 +3,18 @@ body {
 }
 
 .AuthMain {
-  height: 100%;
+  height: 100vh;
   width: 100%;
+
+  display: flex;
+  justify-content: center;
+  padding: 15vh 0;
+  position: relative;
+  top: -5vh;
 }
 
 .AuthSection {
-  height: 630px;
-  margin: 50px 230px;
+  width: 75%;
 
   background-color: #fff;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -24,6 +29,7 @@ body {
 }
 
 .AuthRight {
+  padding-top: 10vh;
   flex: 6.5;
   display: flex;
   justify-content: center;
@@ -49,9 +55,8 @@ body {
 }
 
 .AuthHeader {
-  margin-left: 20px;
-  margin-top: 100px;
-  margin-bottom: 20px;
+  padding-left: 20px;
+  padding-bottom: 50px;
 }
 
 #fname,
@@ -60,18 +65,15 @@ body {
 #mail,
 #no {
   margin-top: 20px;
-  margin-left: 10px;
   padding-bottom: 10px;
   background: none;
-  width: 440px;
-  height: 20px;
+  width: 25vw;
   border-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%) 1;
   border-width: 0px 0px 4px 0px;
 }
 
 .AuthButton {
   margin-top: 30px;
-  margin-left: 120px;
   text-transform: uppercase;
   font-weight: 600;
   cursor: pointer;
@@ -83,6 +85,7 @@ body {
   width: 200px;
   height: 35px;
   border-radius: 15px;
+  align-self: center;
 }
 
 .AuthRight a {
@@ -91,4 +94,34 @@ body {
 
 .AuthRight p {
   margin-top: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+  .AuthMain {
+    height: 100%;
+  }
+
+  .AuthSection {
+    padding: 10vh 0;
+    width: 85%;
+    flex-direction: column;
+  }
+
+  .AuthRight {
+    padding-top: unset;
+    flex: 1;
+    align-items: center;
+  }
+
+  .AuthLeft {
+    display: none;
+  }
+
+  #fname,
+  #pass,
+  #lname,
+  #mail,
+  #no {
+    width: 65vw;
+  }
 }
