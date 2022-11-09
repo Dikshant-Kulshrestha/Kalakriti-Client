@@ -103,7 +103,7 @@ const Product = ({ setIsAuthenticated }) => {
             <div className="ProductBiddingPrice">₹ {getAmount(productData)}</div>
           </div>
 
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div className="ProductBiddingRow">
             <InputField
               type={"input"}
               value={bid}

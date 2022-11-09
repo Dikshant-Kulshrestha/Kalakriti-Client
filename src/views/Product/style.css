@@ -141,6 +141,12 @@
   border: 1px solid #e5e8eb;
 }
 
+.ProductBiddingRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media only screen and (max-width: 768px) {
   .ProductDisplay {
     flex-direction: column;
@@ -157,5 +163,59 @@
     width: unset;
     margin: 1rem 0;
     padding: unset;
+  }
+
+  .ProductBiddingDetails {
+    flex-direction: column;
+  }
+
+  .ProductBiddingDetails > div {
+    padding: 2px 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .ProductBiddingRow {
+    justify-content: unset;
+    height: 2.5rem;
+  }
+
+  .ProductBiddingRow .InputContainer {
+    margin: unset;
+    height: 100%;
+    width: unset;
+  }
+
+  .ProductBiddingPrice {
+    padding: 0 5px;
+  }
+
+  .ProductBiddingDetails > div:last-of-type > div {
+    margin: unset;
+    margin-right: 10px;
+  }
+
+  .ProductBiddingRow .InputContainer input {
+    height: 100%;
+  }
+
+  .ProductBiddingDetails > div input {
+    width: 90px;
+  }
+
+  .ProductBiddingRow .InputField {
+    margin: unset;
+    padding: unset;
+    font-size: 1rem;
+  }
+
+  .ProductBiddingRow .InputIcon {
+    top: 20%;
+  }
+
+  .ProductBiddingRow .Button {
+    height: 100%;
+    width: 115px !important;
   }
 } 
