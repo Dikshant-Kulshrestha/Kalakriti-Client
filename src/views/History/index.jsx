@@ -13,7 +13,7 @@ const Explore = ({ setIsAuthenticated }) => {
     const fetchUserBids = async () => {
       const user = JSON.parse(window.localStorage.getItem("user"));
       console.log('user', user)
-      
+
       const response = await getUserBids({ owner: user.id });
       setBidData(response.data);
     };

@@ -30,7 +30,7 @@
   border-radius: 15px 0 0 15px;
   background-color: #fafafa;
 
-  background-position: 100% 100%;
+  background-position: 50% 50%;
   background-size: cover;
 }
 
@@ -49,7 +49,9 @@
 }
 
 .HistoryProductDescription {
-  height: 50%;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  height: 35%;
 
   padding: 0.6rem 1.2rem;
   padding-bottom: 0.8rem;
@@ -65,13 +67,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-content: center;
 }
 
 .HistoryProductBid {
   background-color: white;
   border-radius: 10px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-
+  height: 2rem;
   margin: 0.7rem 1rem ;
 
   display: flex;
@@ -79,6 +82,7 @@
   align-items: center;
 
   transition: transform 150ms ease-in;
+  cursor: default;
 }
 
 .HistoryProductBid:hover {

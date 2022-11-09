@@ -5,11 +5,15 @@ import "./style.css";
 const HistoryProduct = ({ product }) => {
   const user = JSON.parse(window.localStorage.getItem("user"));
 
+  const handleBidClick = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <Link to={`/product/${product._id}`} className="HistoryProductLink">
       <article className="HistoryProduct">
         <div className="HistoryProductImage" style={{ backgroundImage: `url(${product.images[0].url})` }} />
-        
+
         <div className="HistoryProductMeta">
           <span className="HistoryProductTitle">{product.title}</span>
 
@@ -17,13 +21,13 @@ const HistoryProduct = ({ product }) => {
 
           <div className="HistoryProductBids">
             {product.bids.slice(Math.max(product.bids.length - 3)).reverse().map((bid) => (
-              <div key={bid._id} className="HistoryProductBid">
+              <div key={bid._id} className="HistoryProductBid" onClick={handleBidClick}>
                 <span><RiAuctionLine /></span>
                 <span>₹{bid.amount}</span>
               </div>
             ))}
             {(product.bids.length > 3) && (
-              <div className="HistoryProductBid">
+              <div className="HistoryProductBid" onClick={handleBidClick}>
                 <span><RiAuctionLine /></span>
                 <span style={{ fontSize: "0.8rem" }}>+ {product.bids.length - 3} more</span>
             </div>

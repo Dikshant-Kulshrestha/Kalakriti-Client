@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { RiHistoryLine, RiLogoutBoxLine, RiSearchLine, RiUser3Line } from "react-icons/ri";
+import { RiHistoryLine, RiLogoutBoxLine, RiMenu4Line, RiSearchLine, RiUser3Line } from "react-icons/ri";
 import { Kalakriti } from "../../assets/images/svgs";
 import "./style.css";
 
@@ -9,11 +9,17 @@ const navData = [
   { title: "List", link: "/list" },
 ];
 
+const getUser = () => {
+  const user = window.localStorage.getItem("user");
+  if (user) return JSON.parse(user);
+  return {};
+};
+
 const Navbar = ({ setIsAuthenticated, width }) => {
   const navigate = useNavigate();
   const [ menuOpen, setMenuOpen ] = useState(false);
   const menuRef = useRef(null);
-
+  const userRef = useRef(getUser());
 
   useEffect(() => {
     const clickListener = (event) => {
@@ -31,6 +37,10 @@ const Navbar = ({ setIsAuthenticated, width }) => {
 
   const handleProfileClick = () => {
     setMenuOpen((oldProfileOpen) => !oldProfileOpen);
+  };
+
+  const handleUserClick = () => {
+    navigate("/u/" + userRef.current.id);
   };
 
   const handleHistoryClick = () => {
@@ -64,9 +74,14 @@ const Navbar = ({ setIsAuthenticated, width }) => {
 
         <div className="profileContainer" ref={menuRef}>
           <div className="profile" onClick={handleProfileClick}>
-            <RiUser3Line />
+            <RiMenu4Line />
           </div>
           <div className={"dropdown" + (menuOpen ? " open" : "")}>
+            <div onClick={handleUserClick}>
+              <RiUser3Line />
+              <span>{userRef.current.name}</span>
+            </div>
+
             <div onClick={handleHistoryClick}>
               <RiHistoryLine />
               <span>Your Bids</span>

@@ -1,6 +1,6 @@
 .ExploreMain {
   padding: 1rem 8rem;
-  min-height: 100vh;
+  min-height: calc(100vh - 3.6rem);
 
   background-color: #F9EAE1;
 }
