@@ -30,6 +30,9 @@ const List = ({ setIsAuthenticated }) => {
     const fetchCategories = async () => {
       const response = await getCategories();
       setCategories(response.data);
+
+      /* For Handling Default Selection */
+      handleInputChange(response.data[0]._id, "categoryId")
     };
 
     fetchCategories();
