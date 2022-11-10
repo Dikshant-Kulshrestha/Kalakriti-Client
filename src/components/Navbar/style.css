@@ -44,14 +44,14 @@ nav {
   justify-content: space-evenly;
 }
 
-.content a {
+.content a, .navLink {
   color: inherit;
   margin: 0 1rem;
   text-decoration: none;
   cursor: pointer;
 }
 
-.content a:hover {
+.content a:hover, .navLink:hover {
   color: #000000;
 }
 
@@ -103,6 +103,10 @@ nav {
   overflow: hidden;
 
   z-index: 10;
+}
+
+.tag-dropdown {
+  transform-origin: center top;
 }
 
 .dropdown.open {

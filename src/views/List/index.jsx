@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -6,7 +6,7 @@ import Navbar from "../../components/Navbar";
 import InputField from "../../components/InputField";
 import Button from "../../components/Button";
 
-import { addProduct } from "../../apis";
+import { addProduct, getCategories } from "../../apis";
 import { RiCalendarTodoLine } from "react-icons/ri";
 import "./style.css";
 
@@ -20,9 +20,20 @@ const initialFormData = {
 const List = ({ setIsAuthenticated }) => {
   const navigate = useNavigate();
 
-  const [formData, setFormData] = useState(initialFormData);
-  const [date, setDate] = useState("");
-  const [files, setFiles] = useState([]);
+  const [ categories, setCategories ] = useState([]);
+
+  const [ formData, setFormData ] = useState(initialFormData);
+  const [ date, setDate ] = useState("");
+  const [ files, setFiles ] = useState([]);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const response = await getCategories();
+      setCategories(response.data);
+    };
+
+    fetchCategories();
+  }, []);
 
   const handleInputChange = (value, key) => {
     const newData = { ...formData };
@@ -106,6 +117,17 @@ const List = ({ setIsAuthenticated }) => {
               innerProps={{ type: "file", multiple: true }}
               required
             />
+
+            <select
+              className="SelectField"
+              onChange={(e) => handleInputChange(e.currentTarget.value, "category")}
+            >
+              {categories.map((category) => (
+                <option key={category._id} className="SelectOption" value={category._id}>
+                  {category.title}
+                </option>
+              ))}
+            </select>
 
             <div className="ListActions">
               <Button label="Submit" />

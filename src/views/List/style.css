@@ -52,6 +52,24 @@
   justify-content: center;
 }
 
+.SelectField {
+  margin: 0.6rem 0;
+  padding: 8px 7px;
+
+  font-size: 1.1rem;
+  font-family: inherit;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #cccccc;
+
+  resize: none;
+}
+
+.SelectField:focus {
+  outline: none;
+  outline: 2px solid #793de7;
+}
+
 @media only screen and (max-width: 768px) {
   .ListHeader {
     width: 85%;

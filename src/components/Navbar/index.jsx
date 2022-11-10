@@ -1,9 +1,10 @@
 import { useEffect, useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { RiHistoryLine, RiLogoutBoxLine, RiMenu4Line, RiUser3Line } from "react-icons/ri";
+import { RiHistoryLine, RiLogoutBoxLine, RiMenu4Line, RiPriceTag3Line, RiUser3Line } from "react-icons/ri";
 import { Kalakriti } from "../../assets/images/svgs";
 import "./style.css";
 import Search from "../Search";
+import { getCategories } from "../../apis";
 
 const navData = [
   { title: "Explore", link: "/explore" },
@@ -18,9 +19,38 @@ const getUser = () => {
 
 const Navbar = ({ setIsAuthenticated, width }) => {
   const navigate = useNavigate();
+  const userRef = useRef(getUser());
+
+  const [ categories, setCategories ] = useState([]);
+
+  const [ tagOpen, setTagOpen ] = useState(false);
+  const tagRef = useRef(null);
+
   const [ menuOpen, setMenuOpen ] = useState(false);
   const menuRef = useRef(null);
-  const userRef = useRef(getUser());
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const response = await getCategories();
+      setCategories(response.data);
+    };
+
+    fetchCategories();
+  }, []);
+
+  useEffect(() => {
+    const clickListener = (event) => {
+      if (tagRef.current && tagOpen && !tagRef.current.contains(event.target)) {
+        setTagOpen(false);
+      }
+    };
+
+    document.body.addEventListener("click", clickListener);
+
+    return () => {
+      document.body.addEventListener("click", clickListener);
+    };
+  }, [ tagOpen ]);
 
   useEffect(() => {
     const clickListener = (event) => {
@@ -35,6 +65,15 @@ const Navbar = ({ setIsAuthenticated, width }) => {
       document.body.addEventListener("click", clickListener);
     };
   }, [ menuOpen ]);
+
+  const handleTagClick = () => {
+    setTagOpen((oldTagOpen) => !oldTagOpen);
+  };
+
+  const handleTagSelect = (category) => {
+    navigate("/explore/" + category._id);
+    setTagOpen(false);
+  };
 
   const handleProfileClick = () => {
     setMenuOpen((oldProfileOpen) => !oldProfileOpen);
@@ -65,6 +104,20 @@ const Navbar = ({ setIsAuthenticated, width }) => {
       )}
 
       <div className="content">
+        <div className="profileContainer" ref={tagRef}>
+          <span className="navLink" onClick={handleTagClick}>
+            Categories
+          </span>
+          <div className={"dropdown tag-dropdown" + (tagOpen ? " open" : "")}>
+            {categories.map((category) => (
+              <div key={category._id} onClick={() => handleTagSelect(category)}>
+                <RiPriceTag3Line />
+                <span>{category.title}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {navData.map((link, idx) => (
           <Link key={idx} to={link.link}>
             {link.title}

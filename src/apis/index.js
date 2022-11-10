@@ -51,6 +51,17 @@ export const getExploreProducts = async () => {
   return await response.json();
 };
 
+export const getCategoryProducts = async (data) => {
+  const url = baseUrl + `/api/listings/category?category=${data.category}`;
+
+  const response = await fetch(url, {
+    method: "GET",
+    headers: { Authorization: retrieveToken() },
+  });
+
+  return await response.json();
+};
+
 export const getProductsByUser = async (data) => {
   const url = baseUrl + `/api/listings/seller?user=${data.user}`;
 
@@ -111,6 +122,17 @@ export const addRating = async (data) => {
     method: "POST",
     headers: { Authorization: retrieveToken(), "Content-Type": "application/json" },
     body: JSON.stringify(data),
+  });
+
+  return await response.json();
+};
+
+export const getCategories = async (q) => {
+  const url = baseUrl + `/api/product/categories`;
+
+  const response = await fetch(url, {
+    method: "GET",
+    headers: { Authorization: retrieveToken() },
   });
 
   return await response.json();
