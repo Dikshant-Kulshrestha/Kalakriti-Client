@@ -1,4 +1,4 @@
-export const baseUrl = "https://kalakriti-server.herokuapp.com";
+export const baseUrl = "https://kalakriti-server.onrender.com";
 // export const baseUrl = "http://localhost:3001";
 
 export const retrieveToken = () => {
