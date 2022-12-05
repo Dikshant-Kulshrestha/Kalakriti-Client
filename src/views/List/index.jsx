@@ -30,6 +30,9 @@ const List = ({ setIsAuthenticated }) => {
     const fetchCategories = async () => {
       const response = await getCategories();
       setCategories(response.data);
+
+      /* For Handling Default Selection */
+      handleInputChange(response.data[0]._id, "categoryId")
     };
 
     fetchCategories();
@@ -120,7 +123,7 @@ const List = ({ setIsAuthenticated }) => {
 
             <select
               className="SelectField"
-              onChange={(e) => handleInputChange(e.currentTarget.value, "category")}
+              onChange={(e) => handleInputChange(e.currentTarget.value, "categoryId")}
             >
               {categories.map((category) => (
                 <option key={category._id} className="SelectOption" value={category._id}>
