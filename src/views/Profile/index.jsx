@@ -24,6 +24,7 @@ const Explore = ({ setIsAuthenticated }) => {
 
     fetchExplore();
   }, [ params ]);
+  //test
 
   if (!sellerData) return null;
 
